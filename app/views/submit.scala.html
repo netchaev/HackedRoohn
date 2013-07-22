@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ROOHN - News For Hackers</title>
+        <meta name="viewpFlat UI Kitort" content="width=device-width, initial-scale=1.0">
+
+            <!-- Loading Bootstrap -->
+        <link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet">
+
+            <!-- Loading Flat UI -->
+        <link href="@routes.Assets.at("stylesheets/flat-ui.css")" rel="stylesheet">
+
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+            <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+            <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="demo-headline">
+               <h1 class="demo-logo">
+               <a href="index.html"><div class="logo"></div></a>
+                    ROOHN
+                    <small>Hacknews With A Twist</small>
+                </h1>
+            </div> <!-- /demo-headline -->
+
+            <h2>URL</H2>
+            <input id="url" class="span5" type="text">
+            <H2>Title</h2>
+            <input id="title" class="span5" type="text">
+            <H2>Category</h2>
+            <input id="category" class="span5" type="text">
+            <br> <br>
+            <div class="row demo-row">
+                <div class="span4">
+                    <div id="submitpost" class="btn btn-large btn-block btn-primary">Submit</div>
+                </div>
+            </div>
+        </div>
+        <script>
+           $(document).ready(function() {
+            $("#submitpost").click(function(){
+            $.post("/submitPost",
+            {
+            title: $("#title").val(),
+            url: $("#url").val(),
+            category: $("#category").val()
+            }, function(data){alert(data.reply)});
+            });
+            });
+        </script>
+    </body>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="span7">
+                    <h3 class="footer-title">About</h3>
+                    <p>ROOHN has been designed to steamline the experience of consuming online content. It was created at the <a href="http://hacked.io/">Hacked.io</a> weekend hack event hosted by Telefonica at the O2 Greenwich London. For contact please get in touch with any of the twitter accounts here presented on the opposite side of this footer.
+                </p>
+
+                        <!--<p class="pvl">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://designmodo.com/flat-free/" data-text="Flat UI Free - PSD&amp;HTML User Interface Kit" data-via="designmodo" data-size="large">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </p>-->
+
+                        <!-- <a class="footer-brand" href="http://designmodo.com" target="_blank">
+              <img src="images/footer/logo.png" alt="Designmodo.com" /> </a>-->
+
+                </div> <!-- /span8 -->
+
+                <div class="span5">
+                    <div class="footer-banner">
+                        <h3 class="footer-title">Follow us on twitter</h3>
+                        <ul>
+                            <li><a href="http://twitter.com/netchaev">netchaev</a></li>
+                            <li><a href="http://twitter.com/orestmayski">orestmayski</a></li>
+                            <li><a href="http://twitter.com/purplearti">purplearti</a></li>
+
+
+                        </ul>
+                            <!--Go to: <a href="http://designmodo.com/flat" target="_blank">designmodo.com/flat</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</html>

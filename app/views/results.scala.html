@@ -1,0 +1,59 @@
+@(posts:List[Post])
+<div class="container">
+        <!-- Loading Bootstrap -->
+    <link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet">
+
+        <!-- Loading Flat UI -->
+    <link href="@routes.Assets.at("stylesheets/flat-ui.css")" rel="stylesheet">
+
+
+    <div class="demo-headline">
+        <h1 class="demo-logo">
+            <div class="logo"></div>
+            ROOHN
+            <small>Hacknews With A Twist</small>
+        </h1>
+    </div> <!-- /demo-headline -->
+
+    <h2>Results</H2>
+    <br>
+    @for(post <- posts){
+        <a href="@post.getUrl"><p>@post.getTitle</p></a>
+        <br>
+    }
+</div>
+<br><br><br>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span7">
+                <h3 class="footer-title">About</h3>
+                <p>ROOHN has been designed to steamline the experience of consuming online content. It was created at the <a href="http://hacked.io/">Hacked.io</a> weekend hack event hosted by Telefonica at the O2 Greenwich London. For contact please get in touch with any of the twitter accounts here presented on the opposite side of this footer.
+                </p>
+
+                    <!--<p class="pvl">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://designmodo.com/flat-free/" data-text="Flat UI Free - PSD&amp;HTML User Interface Kit" data-via="designmodo" data-size="large">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </p>-->
+
+                    <!-- <a class="footer-brand" href="http://designmodo.com" target="_blank">
+              <img src="images/footer/logo.png" alt="Designmodo.com" /> </a>-->
+
+            </div> <!-- /span8 -->
+
+            <div class="span5">
+                <div class="footer-banner">
+                    <h3 class="footer-title">Follow us on twitter</h3>
+                    <ul>
+                        <li><a href="http://twitter.com/netchaev">netchaev</a></li>
+                        <li><a href="http://twitter.com/orestmayski">orestmayski</a></li>
+                        <li><a href="http://twitter.com/purplearti">purplearti</a></li>
+
+
+                    </ul>
+                        <!--Go to: <a href="http://designmodo.com/flat" target="_blank">designmodo.com/flat</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

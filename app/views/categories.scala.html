@@ -1,0 +1,191 @@
+<!-- Loading Bootstrap -->
+<link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet">
+
+<!-- Loading Flat UI -->
+<link href="@routes.Assets.at("stylesheets/flat-ui.css")" rel="stylesheet">
+
+<div class="container">
+    <div class="demo-headline">
+        <h1 class="demo-logo">
+            <div class="logo"></div>
+            ROOHN
+            <small>Hacknews With A Twist</small>
+        </h1>
+    </div> <!-- /demo-headline -->
+
+    <h2>Categories</h2><br>
+        <!--<h3 class="demo-panel-title">Buttons</h3>-->
+    <div class="row demo-row">
+        <div class="span3">
+            <a href="ajax" class="btn btn-large btn-block btn-primary">AJAX</a>
+        </div>
+        <div class="span3">
+            <a href="android" class="btn btn-large btn-block btn-primary">Android</a>
+        </div>
+        <div class="span3">
+            <a href="aspnet" class="btn btn-large btn-block btn-primary">ASP NET</a>
+        </div>
+        <div class="span3">
+            <a href="c" class="btn btn-large btn-block btn-primary">C</a>
+        </div>
+        <br><br><br>
+    </div> <!-- /row -->
+
+    <div class="row demo-row">
+        <div class="span3">
+            <a href="csharp" class="btn btn-large btn-block btn-primary">C</a>
+        </div>
+
+        <div class="span3">
+            <a href="cpp" class="btn btn-large btn-block btn-primary">C++</a>
+        </div>
+        <div class="span3">
+            <a href="css" class="btn btn-large btn-block btn-primary">CSS</a>
+        </div>
+        <div class="span3">
+            <a href="dotnet" class="btn btn-large btn-block btn-primary">dotnet</a>
+        </div>
+
+        <br><br><br>
+    </div> <!-- /row -->
+    <div class="row demo-row">
+        <div class="span3">
+            <a href="haskell" class="btn btn-large btn-block btn-primary">Haskell</a>
+        </div>
+        <div class="span3">
+            <a href="html" class="btn btn-large btn-block btn-primary">HTML</a>
+        </div>
+        <div class="span3">
+            <a href="java" class="btn btn-large btn-block btn-primary">Java</a>
+        </div>
+        <div class="span3">
+            <a href="javascript" class="btn btn-large btn-block btn-primary">Javascript</a>
+        </div>
+
+
+        <br><br><br>
+    </div>
+    <div class="row demo-row">
+
+        <div class="span3">
+            <a href="jquery" class="btn btn-large btn-block btn-primary">Jquery</a>
+        </div>
+        <div class="span3">
+            <a href="json" class="btn btn-large btn-block btn-primary">JSON</a>
+        </div>
+        <div class="span3">
+            <a href="mysql" class="btn btn-large btn-block btn-primary">MySQL</a>
+        </div>
+        <div class="span3">
+            <a href="objective_c" class="btn btn-large btn-block btn-primary">Objective C</a>
+        </div>
+
+        <br><br><br>
+    </div>
+    <div class="row demo-row">
+
+
+        <div class="span3">
+            <a href="php" class="btn btn-large btn-block btn-primary">PHP</a>
+        </div>
+
+        <div class="span3">
+            <a href="python" class="btn btn-large btn-block btn-primary">Python</a>
+        </div>
+        <div class="span3">
+            <a href="ruby" class="btn btn-large btn-block btn-primary">Ruby</a>
+        </div>
+        <div class="span3">
+            <a href="ruby_on_rails" class="btn btn-large btn-block btn-primary">Ruby On Rails</a>
+        </div>
+    </div>
+        <!-- <h2> Search <h2> -->
+    <br><br><br>
+    <div class="row demo-row">
+        <div class="span6">
+            <a href="" id="sub" class="btn btn-large btn-block btn-primary-submit listed">Submit an Entry</a>
+        </div>
+        <div class="span6">
+            <a href="#fakelink" id="search_btn" class="btn btn-large btn-block btn-primary-search listed">Search</a>
+        </div>
+    </div>
+        <!-- <h2> Search <h2> -->
+    <br><br>
+</div> <!-- /download area -->
+<script>
+    var bigstring = "";
+    $(document).ready(function() {
+    $(".btn").click(function(){
+    if($(this).attr('id') == ("sub")) {
+    window.location.href = "/submit";
+    }
+    event.preventDefault();
+    if($(this).attr('id') !== ("search_btn")) {
+    if($(this).hasClass('listed')){
+    $(this).removeClass("listed");
+    } else {
+    $(this).addClass("listed");
+    }
+    }
+    });
+    $("#search_btn").click(function(){
+    event.preventDefault();
+    $('.btn').each(function(){
+    if($(this).hasClass('listed')){
+    bigstring += $(this).attr('href') + ";";
+    }
+
+    });
+    window.location.href = "/search/"+bigstring;
+    });
+    });
+</script>
+</div> <!-- /container -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span7">
+                <h3 class="footer-title">About</h3>
+                <p>ROOHN has been designed to streamline the experience of consuming online content. It was created at the <a href="http://hacked.io/">Hacked.io</a> weekend hack event hosted by Telefonica at the O2 Greenwich London. For contact please get in touch with any of the twitter accounts here presented on the opposite side of this footer.
+            </p>
+
+                </p>
+
+
+
+                <a class="footer-brand" href="http://designmodo.com" target="_blank">
+                        <!--<img src="images/footer/logo.png" alt="Designmodo.com" />-->
+                </a>
+            </div> <!-- /span8 -->
+
+            <div class="span5">
+                <div class="footer-banner">
+                    <h3 class="footer-title">Follow us on twitter</h3>
+                    <ul>
+                        <li>@@netchaev</li>
+                        <li>@@orestmayski</li>
+                        <li>@@purpleari</li>
+
+                    </ul>
+                        <!--Go to: <a href="http://designmodo.com/flat" target="_blank">designmodo.com/flat</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Load JS here for greater good =============================-->
+<script src="@routes.Assets.at("javascripts/jquery-1.8.3.min.js")"></script>
+<script src="@routes.Assets.at("javascripts/jquery-ui-1.10.3.custom.min.js")"></script>
+<script src="@routes.Assets.at("javascripts/jquery.ui.touch-punch.min.js")"></script>
+<script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
+<script src="@routes.Assets.at("javascripts/bootstrap-select.js")"></script>
+<script src="@routes.Assets.at("javascripts/bootstrap-switch.js")"></script>
+<script src="@routes.Assets.at("javascripts/flatui-checkbox.js")"></script>
+<script src="@routes.Assets.at("javascripts/flatui-radio.js")"></script>
+<script src="@routes.Assets.at("javascripts/jquery.tagsinput.js")"></script>
+<script src="@routes.Assets.at("javascripts/jquery.placeholder.js")"></script>
+<script src="@routes.Assets.at("javascripts/jquery.stacktable.js")"></script>
+<script src="@routes.Assets.at("http://vjs.zencdn.net/c/video.js")"></script>
+<script src="@routes.Assets.at("javascripts/application.js")"></script>
